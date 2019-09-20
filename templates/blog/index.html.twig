@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil de mon blog{% endblock %}
+
+{% block body %}
+
+{% for article in articles %}
+
+    <div class="post-preview">
+          <a href={{ path('article', {id: article.id}) }}>
+            <h2 class="post-title">
+              {{ article.title|e }}
+            </h2>
+            <img class="img"
+              src='{{asset path('img/{{ article.picture|e }}')}}'
+          </a>
+          <p>{{ article.content|e }}</p>
+          <p class="post-meta">Posted by
+            <a href="#">Start Bootstrap</a>
+            {{ article.publishedAt|date('d/m/Y') }}</p>
+        </div>
+        
+{% endfor %}      
+      
+    {#  {% for user in users %}#}
+    {#    <li>{{ user.username|e }}</li>#}
+    {#{% endfor %}#}
+    
+    
+        {#{{ dump(articles) }}#}
+
+{% endblock %}

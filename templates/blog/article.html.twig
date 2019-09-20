@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block titre %}{{ article.title }}{% endblock %}
+
+{% block body %}
+<p>{{ article.content }}</p>
+
+
+{% block image %}
+ <header class="masthead" style="background-image: url('img/{{ article.picture }}')">  </header>
+{% endblock %}
+
+{% endblock %}
